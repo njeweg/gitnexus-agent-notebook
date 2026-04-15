@@ -1,0 +1,15 @@
+[project]
+name = "gitnexus-agent-notebook"
+version = "0.1.0"
+description = "Interactive Jupyter notebook using OpenAI as an agent over GitNexus code analysis tools"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "jupyter>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "jupyterlab>=4.0.0",
+]

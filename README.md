@@ -59,7 +59,7 @@ Final Answer to User
 
 ```bash
 # 1. Install dependencies
-pip install -r requirements.txt
+uv sync
 
 # 2. Set up API key
 cp .env.example .env
@@ -130,7 +130,7 @@ The microservices-demo application consists of 10+ microservices:
 ### Files
 
 - `GitNexus_Agent_Example.ipynb` - Main notebook (run this)
-- `requirements.txt` - Python package dependencies
+- `pyproject.toml` - Python package dependencies (managed by uv)
 - `.env.example` - Template for configuration
 - `README.md` - This file
 - `SETUP.md` - Detailed setup instructions
@@ -308,6 +308,7 @@ TOOL_DEFINITIONS = [
 ## Requirements
 
 - Python 3.10+
+- [uv](https://docs.astral.sh/uv/) (recommended) or pip
 - OpenAI API key (get at https://platform.openai.com/api-keys)
 - GitNexus CLI installed
 - Jupyter Notebook/Lab

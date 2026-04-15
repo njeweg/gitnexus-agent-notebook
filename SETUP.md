@@ -36,7 +36,7 @@ Here's what you'll do:
 
 ```
 1. Download this notebook package
-2. Install Python dependencies (openai, python-dotenv)
+2. Install uv, then run: uv sync
 3. Get an OpenAI API key and add to .env file
 4. Install Node.js (if needed)
 5. Install GitNexus CLI via npm
@@ -58,22 +58,32 @@ cd gitnexus-agent-notebook
 
 ## Step 2: Install Python Dependencies
 
-Create a virtual environment (recommended):
+[uv](https://docs.astral.sh/uv/) is a fast Python package manager. Install it once if you don't have it:
 
 ```bash
-# On Windows
-python -m venv venv
-venv\Scripts\activate
+# Install uv (Windows PowerShell)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-# On macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+# Install uv (macOS/Linux)
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Install required packages:
+Create the environment and install dependencies:
 
 ```bash
-pip install -r requirements.txt
+uv sync
+```
+
+This creates a `.venv` and installs everything from `pyproject.toml` automatically.
+
+Activate the environment before running Jupyter:
+
+```bash
+# Windows
+.venv\Scripts\activate
+
+# macOS/Linux
+source .venv/bin/activate
 ```
 
 ## Step 3: Set Up Your OpenAI API Key
